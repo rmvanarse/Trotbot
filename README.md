@@ -1,21 +1,47 @@
-Arduino interface to MCS-12085/12086 Optical Mouse Sensor
+# Trotbot
 
-Connect SDIO/SCLK to pins defined in mcs-12085.cpp and then call
-mcs12085_dx() and mcs12085_dy() to read distance mouse has moved since
-last call.
+## About 
+<p align="center">
+  <img src="https://github.com/ERC-BPGC/Trotbot/blob/master/Trotbot.jpg" alt="drawing" width="400"/>
+</p>
 
-
-# Procedure to run obstacle_expansion:
-
-1.Create a catkin package named obstacle_expander 
-(dependencies:message_runtime
-rospy
-jsk_recognition_msgs
-sensor_msgs
-geometry_msgs
-)
-
-2.copy the three message files to msg folder and source files to scripts folder
+**Trotbot** is a robot designed to serve as a delivery robot in an indoor environment. The deliverables will be placed inside the container. It will be able to autonomously navigate around obstacles and reach waypoints set in and around its environment. Identification tags will be used by the Bot to locate the rooms and localize itself.
 
 
-3.edit the CMakelists
+## Prerequisites:
+- [ROS Kinetic](http://wiki.ros.org/kinetic/Installation) on Ububtu 16.04
+- [Python catkin-tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) 
+- [librealsense](https://github.com/IntelRealSense/librealsense)
+- [rplidar_ros](https://github.com/Slamtec/rplidar_ros)
+
+To install the python dependencies:
+```bash
+pip2 install -r requirements.txt
+sudo apt-get install ros-kinetic-turtrlebot3-*
+```
+
+
+To use this repo do:
+
+```bash
+cd trotbot_ws/src
+git clone https://github.com/ERC-BPGC/Trotbot.git 
+cd ..
+catkin build
+source devel/setup.bash
+
+# run scripts from the navigation package
+```
+
+**Note**: The packages have been tested with ROS Kinetic on Ubuntu 16.04.
+
+-----------------------
+
+## Contributors:
+- Atharv Sonawane 
+- Ojit Mehta
+- Rishikesh Vanarse
+- Harshal Deshpande
+- Mihir Dharmadhikari
+- Mohit Gupta
+- Atman Kar
